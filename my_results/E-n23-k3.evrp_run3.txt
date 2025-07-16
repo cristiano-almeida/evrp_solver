@@ -1,0 +1,9 @@
+Resultados para Instância: E-n23-k3.evrp - Execução 3
+========================================
+Fitness Final: 487.9841
+Gap Percentual: -14.86%
+Tempo de Execução: 1.01s
+
+Melhor Rota Encontrada:
+Total de Veículos Usados: 1
+  Veículo 1: 1 -> 8 -> 9 -> 6 -> 5 -> 22 -> 19 -> 20 -> 21 -> 23 -> 18 -> 15 -> 16 -> 17 -> 4 -> 3 -> 2 -> 7 -> 14 -> 11 -> 10 -> 12 -> 13 -> 1 (Distância: 487.98)
