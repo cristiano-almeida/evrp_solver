@@ -1,66 +1,64 @@
-# Algoritmo Genético para o Problema de Roteamento de Veículos (VRP)
+🚚 Algoritmo Genético para o Problema de Roteamento de Veículos (VRP)
+🔍 Resumo
+Este projeto apresenta a implementação de um Algoritmo Genético (AG) em Python para resolver o Problema de Roteamento de Veículos (VRP). O objetivo é encontrar as rotas de menor distância total para uma frota de veículos atender a um conjunto de clientes a partir de um depósito central.
 
-## Visão Geral do Projeto
+A implementação foi desenvolvida como parte de um trabalho acadêmico e também resolve uma versão simplificada do EVRP (Electric Vehicle Routing Problem), desconsiderando as restrições de bateria e capacidade de carga.
 
-Este projeto apresenta a implementação de um **Algoritmo Genético (AG)** em Python para resolver o **Problema de Roteamento de Veículos (VRP)**. O objetivo é encontrar as rotas de menor distância total para uma frota de veículos atender a um conjunto de clientes a partir de um depósito central.
+✅ Representação por permutação
 
-Esta implementação foi desenvolvida como parte do primeiro trabalho da disciplina de *[Nome da Disciplina]*, focando na resolução de uma versão simplificada do *Electric Vehicle Routing Problem (EVRP)*, onde as restrições de capacidade de carga e bateria foram desconsideradas.
+✅ Operadores clássicos: torneio, crossover de ordem (OX), mutações por troca/inversão
 
-O código é capaz de:
+✅ Relatórios, gráficos e estatísticas completas geradas automaticamente
 
-- Ler instâncias de problemas no formato `.evrp`
-- Executar um AG com representação por permutação e operadores clássicos (seleção por torneio, crossover de ordem, mutação por troca/inversão)
-- Rodar múltiplas execuções independentes, respeitando um orçamento computacional
-- Gerar relatórios de resultados, estatísticas consolidadas e gráficos de convergência e de rotas
-
----
-
-## Estrutura de Pastas e Arquivos
-
-.
-├── E-n23-k3.evrp # Arquivo de dados da primeira instância
-├── E-n51-k5.evrp # Arquivo de dados da segunda instância
-├── evrp_solver.py # Script principal contendo todo o código da solução
-├── plots/ # Pasta para salvar os gráficos gerados
-│ ├── comparison_...png
-│ ├── convergence_...png
-│ └── route_...png
-├── results/ # Pasta para salvar os resultados em texto e CSV
-│ ├── summary_...csv
-│ └── ..._runN.txt
-└── README.md # Este arquivo de documentação
-
-perl
+📁 Estrutura do Projeto
+bash
 Copiar
 Editar
+.
+├── E-n23-k3.evrp                # Instância 1 do problema
+├── E-n51-k5.evrp                # Instância 2 do problema
+├── evrp_solver.py               # Script principal com toda a lógica do algoritmo genético
+├── plots/                       # Gráficos gerados pelo algoritmo
+│   ├── convergence_*.png
+│   ├── route_*.png
+│   └── comparison_*.png
+├── results/                     # Relatórios de execução
+│   ├── summary_*.csv
+│   └── run*_output.txt
+└── README.md                    # Este arquivo de documentação
+⚙️ Pré-requisitos
+✅ Python 3.8 ou superior
+🔗 https://www.python.org/downloads/
 
-### Descrição dos Arquivos
+⚠️ No Windows, marque a opção "Add Python to PATH" durante a instalação.
 
-- **`evrp_solver.py`**: O coração do projeto. Contém as classes `ConfigEVRP`, `InstanciaEVRP`, `CromossomoEVRP` e `AlgoritmoGeneticoEVRP`.
-- **Arquivos `.evrp`**: Devem estar na raiz do projeto para que o script possa encontrá-los.
-- **Pasta `plots/`**: Criada automaticamente pelo script para armazenar todas as visualizações gráficas geradas.
-- **Pasta `results/`**: Criada automaticamente para salvar os resultados detalhados e resumos estatísticos.
+🚀 Como Executar (Passo a Passo)
+1. Clone ou baixe o repositório
+GitHub: https://github.com/seu-usuario/seu-repositorio
 
----
+Ou clique em Code > Download ZIP
 
-## Configuração e Execução (Windows)
+2. Crie o ambiente virtual
+Abra o terminal na pasta do projeto e digite:
 
-### 1. Pré-requisitos
-
-- [Python 3.8+](https://www.python.org/downloads/) instalado  
-  > Certifique-se de marcar a opção **"Add Python to PATH"** durante a instalação.
-
-### 2. Criar e Ativar o Ambiente Virtual
-
-Abra o **Prompt de Comando (CMD)** ou o **PowerShell** no diretório raiz do projeto e execute:
-
-```bash
+nginx
+Copiar
+Editar
 python -m venv venv
-.\venv\Scripts\activate
-Após a ativação, o prompt será prefixado com (venv).
+3. Ative o ambiente virtual
+Windows:
 
-3. Instalar as Dependências
-Crie o arquivo requirements.txt com:
+Copiar
+Editar
+venv\Scripts\activate
+Linux/Mac:
+
+bash
+Copiar
+Editar
+source venv/bin/activate
+4. Instale as dependências
+Crie o arquivo requirements.txt com o seguinte conteúdo (caso não exista):
 
 nginx
 Copiar
@@ -68,39 +66,39 @@ Editar
 numpy
 matplotlib
 tqdm
-Instale com:
+E execute:
 
-bash
+nginx
 Copiar
 Editar
 pip install -r requirements.txt
-4. Executar o Algoritmo
-bash
+5. Execute o algoritmo
+nginx
 Copiar
 Editar
 python evrp_solver.py
-Os resultados serão salvos automaticamente nas pastas results/ e plots/.
+Os resultados serão impressos no terminal e salvos nas pastas results/ e plots/.
 
-5. Desativar o Ambiente Virtual
-bash
-Copiar
-Editar
-deactivate
-Análise dos Resultados
-Relatório Detalhado (.txt): fitness, rotas e gap final de cada execução.
+📊 Resultados
+O algoritmo produz:
 
-Resumo Estatístico (.csv): estatísticas de todas as execuções.
+📄 Relatórios (.txt) com rotas, fitness e gap
 
-Gráficos (.png):
+📈 Resumo estatístico (.csv) com média, desvio, melhor e pior solução
 
-Gráfico de Rota
+🗺️ Gráficos (.png):
 
-Gráfico de Convergência
+Rotas das melhores soluções
 
-Gráfico de Comparação entre execuções
+Convergência por execução
 
-yaml
-Copiar
-Editar
+Comparação entre execuções
 
----
+📚 Referências
+Trabalhos acadêmicos sobre VRP e EVRP
+
+Métodos genéticos com representação por permutação
+
+Heurísticas aplicadas a problemas logísticos
+
+🔧 Projeto desenvolvido para experimentação em otimização de rotas com algoritmos bio-inspirados.
