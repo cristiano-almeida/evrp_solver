@@ -71,7 +71,7 @@ Editar
 numpy
 matplotlib
 tqdm
-Em seguida, instale com:
+Depois, instale com:
 
 bash
 Copiar
@@ -107,3 +107,9 @@ Gráfico de Rota: visualização da melhor solução
 Gráfico de Convergência: evolução do fitness por geração
 
 Gráfico de Comparação: todas as curvas de convergência lado a lado
+
+yaml
+Copiar
+Editar
+
+---
