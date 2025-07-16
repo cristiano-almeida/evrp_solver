@@ -1,60 +1,56 @@
-# Algoritmo Genético para o Problema de Roteamento de Veículos (VRP)
+Algoritmo Genético para o Problema de Roteamento de Veículos (VRP)
+Visão Geral do Projeto
+Este projeto apresenta a implementação de um Algoritmo Genético (AG) em Python para resolver o Problema de Roteamento de Veículos (VRP). O objetivo é encontrar as rotas de menor distância total para uma frota de veículos atender a um conjunto de clientes a partir de um depósito central.
 
-## Visão Geral do Projeto
-
-Este projeto apresenta a implementação de um **Algoritmo Genético (AG)** em Python para resolver o **Problema de Roteamento de Veículos (VRP)**. O objetivo é encontrar as rotas de menor distância total para uma frota de veículos atender a um conjunto de clientes a partir de um depósito central.
-
-Esta implementação foi desenvolvida como parte do primeiro trabalho da disciplina de *[Nome da Disciplina]*, focando na resolução de uma versão simplificada do *Electric Vehicle Routing Problem (EVRP)*, onde as restrições de capacidade de carga e bateria foram desconsideradas.
+Esta implementação foi desenvolvida como parte do primeiro trabalho da disciplina de [Nome da Disciplina], focando na resolução de uma versão simplificada do Electric Vehicle Routing Problem (EVRP), onde as restrições de capacidade de carga e bateria foram desconsideradas.
 
 O código é capaz de:
 
-- Ler instâncias de problemas no formato `.evrp`
-- Executar um AG com representação por permutação e operadores clássicos (seleção por torneio, crossover de ordem, mutação por troca/inversão)
-- Rodar múltiplas execuções independentes, respeitando um orçamento computacional
-- Gerar relatórios de resultados, estatísticas consolidadas e gráficos de convergência e de rotas
+Ler instâncias de problemas no formato .evrp
 
----
+Executar um AG com representação por permutação e operadores clássicos (seleção por torneio, crossover de ordem, mutação por troca/inversão)
 
-## Estrutura de Pastas e Arquivos
+Rodar múltiplas execuções independentes, respeitando um orçamento computacional
 
-.
-├── E-n23-k3.evrp # Arquivo de dados da primeira instância
-├── E-n51-k5.evrp # Arquivo de dados da segunda instância
-├── evrp_solver.py # Script principal contendo todo o código da solução
-├── plots/ # Pasta para salvar os gráficos gerados
-│ ├── comparison_...png
-│ ├── convergence_...png
-│ └── route_...png
-├── results/ # Pasta para salvar os resultados em texto e CSV
-│ ├── summary_...csv
-│ └── ..._runN.txt
-└── README.md # Este arquivo de documentação
+Gerar relatórios de resultados, estatísticas consolidadas e gráficos de convergência e de rotas
 
-perl
+Estrutura de Pastas e Arquivos
+bash
 Copiar
 Editar
+.
+├── E-n23-k3.evrp         # Arquivo de dados da primeira instância
+├── E-n51-k5.evrp         # Arquivo de dados da segunda instância
+├── evrp_solver.py        # Script principal contendo todo o código da solução
+├── plots/                # Pasta para salvar os gráficos gerados
+│   ├── comparison_...png
+│   ├── convergence_...png
+│   └── route_...png
+├── results/              # Pasta para salvar os resultados em texto e CSV
+│   ├── summary_...csv
+│   └── ..._runN.txt
+└── README.md             # Este arquivo de documentação
+Descrição dos Arquivos
+evrp_solver.py: O coração do projeto. Contém as classes ConfigEVRP, InstanciaEVRP, CromossomoEVRP e AlgoritmoGeneticoEVRP.
 
-### Descrição dos Arquivos
+Arquivos .evrp: Devem estar na raiz do projeto para que o script possa encontrá-los.
 
-- **`evrp_solver.py`**: O coração do projeto. Contém as classes `ConfigEVRP`, `InstanciaEVRP`, `CromossomoEVRP` e `AlgoritmoGeneticoEVRP`.
-- **Arquivos `.evrp`**: Devem estar na raiz do projeto para que o script possa encontrá-los.
-- **Pasta `plots/`**: Criada automaticamente pelo script para armazenar todas as visualizações gráficas geradas, como gráficos de convergência e mapas de rotas.
-- **Pasta `results/`**: Criada automaticamente para salvar os resultados detalhados de cada execução em arquivos `.txt` e um resumo estatístico em formato `.csv`.
+Pasta plots/: Criada automaticamente pelo script para armazenar todas as visualizações gráficas geradas, como gráficos de convergência e mapas de rotas.
 
----
+Pasta results/: Criada automaticamente para salvar os resultados detalhados de cada execução em arquivos .txt e um resumo estatístico em formato .csv.
 
-## Configuração e Execução (Windows)
+Configuração e Execução (Windows)
+1. Pré-requisitos
+Python 3.8+ instalado
 
-### 1. Pré-requisitos
+Certifique-se de marcar a opção "Add Python to PATH" durante a instalação.
 
-- [Python 3.8+](https://www.python.org/downloads/) instalado  
-  > Certifique-se de marcar a opção **"Add Python to PATH"** durante a instalação.
+2. Criar e Ativar o Ambiente Virtual
+Abra o Prompt de Comando (CMD) ou o PowerShell no diretório raiz do projeto e execute:
 
-### 2. Criar e Ativar o Ambiente Virtual
-
-Abra o **Prompt de Comando (CMD)** ou o **PowerShell** no diretório raiz do projeto e execute:
-
-```bash
+nginx
+Copiar
+Editar
 # Criar o ambiente virtual
 python -m venv venv
 
@@ -73,14 +69,14 @@ matplotlib
 tqdm
 Depois, instale com:
 
-bash
+nginx
 Copiar
 Editar
 pip install -r requirements.txt
 4. Executar o Algoritmo
 Rode o script principal com:
 
-bash
+nginx
 Copiar
 Editar
 python evrp_solver.py
@@ -89,7 +85,7 @@ O progresso será exibido no console. Ao final, os resultados e gráficos serão
 5. Desativar o Ambiente Virtual
 Quando terminar, desative o ambiente com:
 
-bash
+nginx
 Copiar
 Editar
 deactivate
@@ -107,9 +103,3 @@ Gráfico de Rota: visualização da melhor solução
 Gráfico de Convergência: evolução do fitness por geração
 
 Gráfico de Comparação: todas as curvas de convergência lado a lado
-
-yaml
-Copiar
-Editar
-
----
