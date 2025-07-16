@@ -45,7 +45,7 @@ A implementação foi desenvolvida como parte de um trabalho acadêmico e també
 
 ### 1. Clone ou baixe o repositório
 
-- GitHub: https://github.com/seu-usuario/seu-repositorio
+- GitHub: https://github.com/cristiano-almeida/evrp_solver
 - Ou clique em **Code** > **Download ZIP**
 
 ### 2. Crie o ambiente virtual
